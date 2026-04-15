@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Hub VN | Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-a"></div>
+    <div class="bg-layer bg-b"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/" class="logo">IT Hub VN</a>
+        <nav class="main-nav" aria-label="Admin navigation">
+          <a href="/" data-i18n="admin.home">Trang chu</a>
+        </nav>
+        <div class="header-actions">
+          <button id="langToggle" class="ghost-btn" type="button">EN</button>
+          <button id="themeToggle" class="ghost-btn" type="button">Dark</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container admin-shell">
+      <section>
+        <div class="section-head">
+          <p class="section-tag">Admin</p>
+          <h1 data-i18n="admin.title">Quan ly bai viet</h1>
+        </div>
+        <p class="muted" data-i18n="admin.desc">Tao, cap nhat hoac xoa bai viet trong database SQLite.</p>
+      </section>
+
+      <section>
+        <h2 data-i18n="admin.formTitle">Thong tin bai viet</h2>
+        <form id="postForm" class="admin-form">
+          <div class="form-grid">
+            <label>Slug<input name="slug" required /></label>
+            <label>Tag<input name="tag" required /></label>
+            <label>Level<input name="level" required /></label>
+            <label>Read Time<input name="readTime" required placeholder="8 min" /></label>
+            <label>Published At<input name="publishedAt" required placeholder="2026-04-15" /></label>
+            <label>Title VI<input name="titleVi" required /></label>
+            <label>Title EN<input name="titleEn" required /></label>
+            <label>Excerpt VI<textarea name="excerptVi" required></textarea></label>
+            <label>Excerpt EN<textarea name="excerptEn" required></textarea></label>
+            <label>Content VI<textarea name="contentVi" required></textarea></label>
+            <label>Content EN<textarea name="contentEn" required></textarea></label>
+          </div>
+          <div class="admin-actions">
+            <button type="submit" class="btn btn-main" data-i18n="admin.create">Tao bai viet</button>
+            <button type="button" id="updateBtn" class="btn btn-outline" data-i18n="admin.update">Cap nhat theo slug</button>
+            <button type="button" id="deleteBtn" class="btn btn-outline danger" data-i18n="admin.delete">Xoa theo slug</button>
+          </div>
+        </form>
+        <p id="adminMessage" class="muted"></p>
+      </section>
+
+      <section>
+        <h2 data-i18n="admin.listTitle">Danh sach bai viet hien tai</h2>
+        <div id="postList" class="admin-list"></div>
+      </section>
+    </main>
+
+    <script src="settings.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

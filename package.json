@@ -1,0 +1,22 @@
+{
+  "name": "it-hub-vn",
+  "version": "1.0.0",
+  "description": "All-in-one IT portal with Node.js, SQLite, i18n, and dark mode",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "it",
+    "portal",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  }
+}

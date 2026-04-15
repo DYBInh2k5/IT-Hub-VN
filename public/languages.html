@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Hub VN | Language Handbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-a"></div>
+    <div class="bg-layer bg-b"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/" class="logo">IT Hub VN</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/" data-i18n="nav.home">Trang chu</a>
+          <details class="nav-menu">
+            <summary data-i18n="nav.explore">Muc luc</summary>
+            <div class="nav-dropdown">
+              <input id="navSearch" class="nav-search" type="search" placeholder="Tim muc..." data-i18n-placeholder="nav.searchPlaceholder" />
+              <a href="/feed.html" data-i18n="nav.feed">Tin moi</a>
+              <a href="/tracks.html" data-i18n="nav.tracks">Nganh IT</a>
+              <a href="/stacks.html" data-i18n="nav.stacks">Ngon ngu & Framework</a>
+              <a href="/languages.html" data-i18n="nav.languages">Language Handbook</a>
+              <a href="/knowledge.html" data-i18n="nav.knowledge">Kien thuc sau</a>
+              <a href="/roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
+              <a href="/resources.html" data-i18n="nav.resources">Tai nguyen</a>
+            </div>
+          </details>
+          <a href="/admin.html" data-i18n="nav.admin">Quan tri</a>
+        </nav>
+        <div class="header-actions">
+          <button id="langToggle" class="ghost-btn" type="button">EN</button>
+          <button id="themeToggle" class="ghost-btn" type="button">Dark</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="chip" data-i18n="languages.tag">Language Handbook</p>
+        <h1 data-i18n="languages.title">Chi tiet ngon ngu: cach hoc, cach cai, cach su dung</h1>
+      </section>
+
+      <section class="container" id="languages">
+        <div class="language-grid" id="languageGrid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p data-i18n="footer.copy">Build your future, one commit at a time.</p>
+      </div>
+    </footer>
+
+    <div id="languageModal" class="lang-modal" aria-hidden="true">
+      <div class="lang-modal-backdrop" data-close-modal="true"></div>
+      <section class="lang-modal-panel" role="dialog" aria-modal="true" aria-labelledby="langModalTitle">
+        <button id="langModalClose" class="lang-modal-close" type="button" aria-label="Close">x</button>
+        <h2 id="langModalTitle"></h2>
+        <p id="langModalIntro" class="muted"></p>
+
+        <div class="lang-modal-grid">
+          <article>
+            <h3 data-i18n="languagesDetail.learnTitle">Hoc nhu nao</h3>
+            <div class="lang-level-tabs" id="langLevelTabs">
+              <button type="button" class="level-tab-btn active" data-level="beginner" data-i18n="languagesDetail.beginner">Beginner</button>
+              <button type="button" class="level-tab-btn" data-level="intermediate" data-i18n="languagesDetail.intermediate">Intermediate</button>
+              <button type="button" class="level-tab-btn" data-level="advanced" data-i18n="languagesDetail.advanced">Advanced</button>
+            </div>
+            <div id="langLearnPhases"></div>
+          </article>
+          <article>
+            <h3 data-i18n="languagesDetail.codeTitle">Code nhu nao</h3>
+            <ul id="langCodeUsage" class="knowledge-list"></ul>
+            <ul id="langCodingGuide" class="knowledge-list"></ul>
+          </article>
+        </div>
+
+        <h3 data-i18n="languagesDetail.projectTitle">Mini project roadmap</h3>
+        <ul id="langProjectPlan" class="knowledge-list"></ul>
+
+        <h3 data-i18n="languagesDetail.checklistTitle">Checklist luyen tap</h3>
+        <div id="langChecklist" class="lang-checklist"></div>
+
+        <h3 data-i18n="common.gotchas">Diem de sai</h3>
+        <ul id="langGotchas" class="knowledge-list"></ul>
+
+        <h3 data-i18n="common.interview">Phong van thuong hoi</h3>
+        <ul id="langInterviewQuestions" class="knowledge-list"></ul>
+
+        <h3 data-i18n="languagesDetail.sampleTitle">Code sample</h3>
+        <button id="copyCodeBtn" class="btn btn-outline" type="button" data-i18n="languagesDetail.copyCode">Copy code</button>
+        <pre class="code-block"><code id="langCodeSample"></code></pre>
+      </section>
+    </div>
+
+    <script src="settings.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

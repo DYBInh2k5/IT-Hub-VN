@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT Hub VN | Deep Learning Path</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-a"></div>
+    <div class="bg-layer bg-b"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="/" class="logo">IT Hub VN</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="/" data-i18n="nav.home">Trang chu</a>
+          <details class="nav-menu">
+            <summary data-i18n="nav.explore">Muc luc</summary>
+            <div class="nav-dropdown">
+              <input id="navSearch" class="nav-search" type="search" placeholder="Tim muc..." data-i18n-placeholder="nav.searchPlaceholder" />
+              <a href="/feed.html" data-i18n="nav.feed">Tin moi</a>
+              <a href="/tracks.html" data-i18n="nav.tracks">Nganh IT</a>
+              <a href="/stacks.html" data-i18n="nav.stacks">Ngon ngu & Framework</a>
+              <a href="/languages.html" data-i18n="nav.languages">Language Handbook</a>
+              <a href="/knowledge.html" data-i18n="nav.knowledge">Kien thuc sau</a>
+              <a href="/roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
+              <a href="/resources.html" data-i18n="nav.resources">Tai nguyen</a>
+            </div>
+          </details>
+          <a href="/admin.html" data-i18n="nav.admin">Quan tri</a>
+        </nav>
+        <div class="header-actions">
+          <button id="langToggle" class="ghost-btn" type="button">EN</button>
+          <button id="themeToggle" class="ghost-btn" type="button">Dark</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <p class="chip" data-i18n="knowledge.tag">Deep Learning Path</p>
+        <h1 data-i18n="knowledge.title">Kien thuc chi tiet theo cap do cho tung nganh</h1>
+      </section>
+
+      <section class="container" id="knowledge">
+        <div class="knowledge-grid" id="knowledgeGrid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p data-i18n="footer.copy">Build your future, one commit at a time.</p>
+      </div>
+    </footer>
+
+    <script src="settings.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
