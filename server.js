@@ -1,11 +1,15 @@
 const path = require("path");
+const fs = require("fs");
 const express = require("express");
 const Database = require("better-sqlite3");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const dbPath = path.join(__dirname, "data", "it_hub.db");
+const dbPath = process.env.VERCEL
+  ? path.join("/tmp", "it_hub.db")
+  : path.join(__dirname, "data", "it_hub.db");
+fs.mkdirSync(path.dirname(dbPath), { recursive: true });
 const db = new Database(dbPath);
 
 db.exec(`

@@ -56,3 +56,14 @@ The repository also includes a `render.yaml` blueprint, so you can deploy straig
 This matches the app's database path at data/it_hub.db and keeps the database file persistent across deployments.
 
 If you want to deploy to another platform later, choose one with persistent storage support for SQLite.
+
+## Deploy on Vercel
+
+Vercel works well for a live preview or demo deployment.
+
+1. Connect the GitHub repo to Vercel.
+2. Leave the default build command as `npm install`.
+3. Use `server.js` as the server entrypoint.
+4. Note that SQLite is stored in `/tmp` on Vercel, so data changes are not persistent across cold starts or redeploys.
+
+Because of that limitation, Vercel is best for showcasing the site, while Render is better if you need durable SQLite storage.
