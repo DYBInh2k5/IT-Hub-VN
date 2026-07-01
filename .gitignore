@@ -11,8 +11,14 @@ yarn-error.log*
 *.sqlite
 *.sqlite3
 
+# Ignore SQLite DB in data folder
+/data/*.db
+/data/*.db-journal
+
 # VSCode
 .vscode/
+
+.history/
 
 # OS
 .DS_Store

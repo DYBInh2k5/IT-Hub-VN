@@ -37,3 +37,22 @@ A fullstack IT portal with:
 
 - SQLite file is created at data/it_hub.db automatically.
 - Seed data is inserted on first run.
+
+## Deploy
+
+Recommended platform: Render.
+
+The repository also includes a `render.yaml` blueprint, so you can deploy straight from GitHub.
+
+1. Create a new Web Service from this GitHub repo.
+2. Set the build command to:
+   npm install
+3. Set the start command to:
+   npm start
+4. Add a persistent disk so the SQLite database survives redeploys.
+5. Mount the disk at:
+   /opt/render/project/src/data
+
+This matches the app's database path at data/it_hub.db and keeps the database file persistent across deployments.
+
+If you want to deploy to another platform later, choose one with persistent storage support for SQLite.
